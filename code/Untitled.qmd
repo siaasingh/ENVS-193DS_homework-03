@@ -73,4 +73,33 @@ ggplot(personal_data, aes(x = days_of_the_week, y = hours_spent_outdoors)) +
   )
 ```
 
-c\. This figure shows the average number of hours spent outdoors by day of the week, with individual data points shown for each entry. The plot highlights that I tend to spend more time outdoors on weekends like Friday and Saturday, compared to weekdays such as Monday or Thursday. This may reflect differences in workload and class schedules.
+c\.
+
+This figure shows the average number of hours spent outdoors by day of the week, with
+
+individual data points shown for each entry. The plot highlights that I tend to spend more
+
+time outdoors on weekends like Friday and Saturday, compared to weekdays such as
+
+Monday or Thursday. This may reflect differences in workload and class schedules.
+
+d\. Table Presentation
+
+```{r}
+# Load gt package
+library(gt)
+
+# Round to 1 decimal and format as a labeled table
+summary_data |> 
+  mutate(avg_outdoors = round(avg_outdoors, 1)) |> 
+  gt() |> 
+  cols_label(
+    days_of_the_week = "Day of the Week",
+    avg_outdoors = "Average Hours Spent Outdoors"
+  ) |> 
+  tab_header(
+    title = "Average Outdoor Time by Day of the Week"
+  )
+
+
+```
