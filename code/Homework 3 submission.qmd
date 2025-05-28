@@ -53,13 +53,17 @@ summary_data <- personal_data |>
 
 # Plot both individual points + summarized means
 # Create a plot showing both raw data points and summarized averages:
-# - geom_jitter() plots each individual observation, slightly offset to avoid overlap
-# - geom_col() overlays bars showing the average hours spent outdoors for each weekday
-ggplot(personal_data, aes(x = days_of_the_week, y = hours_spent_outdoors)) +
-  geom_jitter(width = 0.2, color = "#1f78b4", alpha = 0.7) +  # raw data points and 
-  #changing colours
+# - geom_jitter() plots each individual observation, 
+#slightly offset to avoid overlap
+# - geom_col() overlays bars showing the average hours 
+#spent outdoors for each weekday
+ggplot(personal_data, aes(x = days_of_the_week, 
+                          y = hours_spent_outdoors)) +
+  geom_jitter(width = 0.2, color = "#1f78b4", alpha = 0.7) +  
+  # raw data points and changing colours
   geom_col(data = summary_data, aes(y = avg_outdoors), 
-           fill = "#33a02c", alpha = 0.6, width = 0.6) + #average (mean) values per weekday
+           fill = "#33a02c", alpha = 0.6, width = 0.6) + 
+  #average (mean) values per weekday
   labs(
     title = "Average Hours Spent Outdoors by Day of the Week",
     x = "Day of the Week",
@@ -115,4 +119,19 @@ be shaded in cooler blues. I might add emoji annotations to show mood or thought
 
 those days (like 🌤). This approach balances structure and feeling —
 
-giving a data-rich but deeply personal window into my week.
+giving a data-rich but deeply personal window into my week. For example, Tuesday
+
+and Wednesday are marked with sunny icons and warm orange bars, while
+
+Monday and Thursday show short bars with sad faces, using cooler tones.
+
+This combination lets me express both the *amount* of time outside and
+
+how it *felt*, adding emotional resonance to the data.
+
+## 2b. Sketch of My Idea
+
+![](IMG_4722.jpeg){fig-align="center" width="60%"}
+
+```{}
+```
