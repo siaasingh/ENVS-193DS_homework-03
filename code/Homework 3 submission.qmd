@@ -127,11 +127,85 @@ Monday and Thursday show short bars with sad faces, using cooler tones.
 
 This combination lets me express both the *amount* of time outside and
 
-how it *felt*, adding emotional resonance to the data.
+how it *felt*, adding emotional resonance to the data. Since emojis are not currently
+
+rendering with Rstudio, I had to use descriptive words instead in my example.
 
 ## 2b. Sketch of My Idea
 
 ![](IMG_4722.jpeg){fig-align="center" width="60%"}
+
+```{}
+```
+
+2c. Draft of Visualization
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# Create mood-labeled data
+summary_data <- summary_data |> 
+  mutate(mood = c("Happy", "Sad", "Happy", "Happy", "Sad", "Neutral", "Sad"))
+
+# Affective bar plot
+ggplot(summary_data, aes(x = days_of_the_week, y = avg_outdoors, fill = mood)) +
+  geom_col(width = 0.6) +
+  geom_text(aes(label = mood), vjust = -0.5, size = 4) +
+  scale_fill_manual(values = c(
+    "Happy" = "#FDAE61",   # warm orange
+    "Sad" = "#91BFDB",     # cool blue
+    "Neutral" = "#D9D9D9"  # neutral gray
+  )) +
+  labs(
+    title = "My Sunshine Days",
+    subtitle = "Each day colored by mood (Happy, Sad, Neutral)",
+    x = "Day of the Week",
+    y = "Average Hours Outdoors"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
+
+```{}
+```
+
+2d. **Artist Statement**
+
+My piece, *My Sunshine Days*, visualizes the emotional rhythm of my week by
+
+translating hours spent outdoors into colored bars. Each hue evokes a mood
+
+—warm oranges for joyful, sunny days, cool blues for quieter, more reflective
+
+moments, and soft greys for those in-between states.I was inspired by affective
+
+visualizations like Stefanie Posavec and Giorgia Lupi’s *Dear Data*, where data
+
+becomes a deeply personal narrative. I aimed to infuse emotional storytelling into
+
+my chart—beyond just numbers.The medium is a ggplot bar chart rendered in R, with
+
+moods represented through intentional color palettes. I initially hoped to enhance
+
+this affective layer using emojis, but due to rendering limitations in R’s
+
+`geom_text()` and even some font display issues in the browser,
+
+the emojis appeared as "tofu boxes." This limitation nudged me to instead lean
+
+into visual color symbolism as my emotional language. The process involved
+
+coding in R with `dplyr` and `ggplot2`, structuring the data with mood labels,
+
+then carefully assigning each tone to a color that would evoke the emotion I felt on that day
+
+as I relate being outside with being happy.
+
+3a.
 
 ```{}
 ```
