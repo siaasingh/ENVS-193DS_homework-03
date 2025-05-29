@@ -205,7 +205,49 @@ then carefully assigning each tone to a color that would evoke the emotion I fel
 
 as I relate being outside with being happy.
 
-3a.
+3a. **The authors use a combination of statistical techniques to examine**
+
+**how environmental engagement relates to prosocial behavior.**
+
+Specifically, they apply **one-way ANOVA** to test differences in resource allocation
+
+between groups, **chi-squared tests** to assess categorical variable associations,
+
+and **t-tests** for comparing mean scores between high and low environmental
+
+engagement conditions. Additionally, they use **Rasch modeling** to evaluate the
+
+internal consistency and unidimensionality of their behavioral measures. The figure
+
+below illustrates how participants with varying levels of environmental engagement
+
+allocated resources (in points or kW) depending on whether the task was
+
+environmentally relevant, with 95% confidence intervals shown for each condition.
+
+```{r}
+#| label: fig-hw2
+#| fig-cap: "Figure from Homework 2: Resource allocation by environmental engagement and relevance."
+knitr::include_graphics("FigureHW2.png") #code to insert image in the document 
+
+
+
+
+```
+
+3b. The authors clearly represent their statistics in the figure by using bar graphs
+
+with means and 95% confidence intervals, which effectively show the central
+
+tendency and variability. The x- and y-axes are labeled logically, and
+
+categories are clearly differentiated by both environmental relevance and level
+
+of engagement. However, the visualization does not display individual data points,
+
+which limits the reader's ability to assess the distribution or variability within each group.
+
+3c.
 
 ```{}
 ```
