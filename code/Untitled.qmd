@@ -5,8 +5,10 @@ title: "Homework 3 - ENVS 193DS"
 author: "Siaa Singh"
 format: html
 editor: visual
+---
 
 [View this project on GitHub](https://github.com/siaasingh/ENVS-193DS_homework-03)
+
 ---
 
 ```{r}
@@ -20,7 +22,6 @@ library(readxl)
 ```
 
 ```{r}
-install.packages("here")
 library(here)
 ```
 
